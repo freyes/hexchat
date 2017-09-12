@@ -114,6 +114,9 @@ if get_option('buildtype') != 'plain'
     global_cflags += '-fstack-protector-strong'
   endif
 endif
+if get_option('with-GSEAL_ENABLE')
+  global_cflags += '-DGSEAL_ENABLE'
+endif
 add_project_arguments(global_cflags, language: 'c')
 
 
